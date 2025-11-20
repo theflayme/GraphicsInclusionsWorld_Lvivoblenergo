@@ -1,7 +1,7 @@
 import { Bot, Keyboard } from "grammy";
 import { token__telegram } from "./configs/constant";
 import { messageTime } from "./features/timetable/timetable.service";
-import timeout from "./utils/timeout";
+import timeout from "../src/features/utils/timeout";
 
 if (!token__telegram) {
   throw new Error("BOT_TOKEN is missing in .env");

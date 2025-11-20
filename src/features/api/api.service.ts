@@ -1,8 +1,8 @@
 import { api__url } from "../../configs/constant";
-import fetchResponse from "../../middlewares/fetchResponse";
-import extractMenuItems from "../../utils/extractMenuItems";
-import filterItems from "../../utils/filterItems";
-import parseRawHtml from "../../utils/parseRawHtml";
+import fetchResponse from "../middlewares/fetchResponse";
+import extractMenuItems from "../utils/extractMenuItems";
+import filterItems from "../utils/filterItems";
+import parseRawHtml from "../utils/parseRawHtml";
 
 if (!api__url) throw new Error("API_URL is not defined");
 

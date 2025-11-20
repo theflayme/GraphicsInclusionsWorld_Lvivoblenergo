@@ -1,4 +1,4 @@
-import { MenuItem } from "../features/api/api.types";
+import { MenuItem } from "../api/api.types";
 
 function filterItems(items: MenuItem[]) {
   return items.filter(

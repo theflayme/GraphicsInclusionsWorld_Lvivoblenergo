@@ -36,15 +36,20 @@
     "typescript-eslint": "^8.47.0"
   },
   "lint-staged": {
-    "**/*.{ts,js,json,md}": [
+    "*.{ts,js}": [
       "prettier --write",
       "eslint --fix"
     ],
-    "*": {
-      "ts": "[\"prettier --write\",\"eslint --fix\"]",
-      "js": "[\"prettier --write\",\"eslint --fix\"]",
-      "json": "[\"prettier --write\",\"eslint --fix\"]",
-      "md": "[\"prettier --write\",\"eslint --fix\"]"
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "repository": {

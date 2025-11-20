@@ -1,7 +1,10 @@
 import { fetchMenus } from "../api/api.service";
-import formatGroups from "../../utils/formatGroups";
+import formatGroups from "../utils/formatGroups";
 
 import type { Context } from "grammy";
+const footer = `
+          <b>🕯 <a href="https://t.me/LvivSvit_bot">Cвітло Львів</a> | Використовуй бота</b>
+      `;
 
 export const messageTime = async (ctx: Context) => {
   const menus = await fetchMenus();
@@ -28,6 +31,7 @@ export const messageTime = async (ctx: Context) => {
         <b>⏱️ ${tTitle}</b>
         <i>${tSubtitle}\n</i>
         ${formatGroups(tGroups)}
+        ${footer}
       `
         .replace(/^[ \t]+/gm, "")
         .trim();
@@ -39,11 +43,12 @@ export const messageTime = async (ctx: Context) => {
       const messageTomorrow = `
         <b>⏱️ ${tmTitle}</b>
         <i>${tmSubtitle}</i>
+
         ${formatGroups(tmGroups)}
+        ${footer}
       `
         .replace(/^[ \t]+/gm, "")
         .trim();
-
       return await ctx.reply(messageTomorrow, { parse_mode: "HTML" });
     }
 
